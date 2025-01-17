@@ -14,88 +14,23 @@
             color: white;
             font-family: Arial, sans-serif;
         }
-        video {
-            max-width: 100%;
-            height: auto;
-        }
-        #error-message {
-            margin-top: 20px;
-            color: #ff4444;
-            text-align: center;
-            padding: 10px;
-        }
-        #debug-info {
-            margin-top: 10px;
-            color: #888;
-            font-size: 12px;
-            text-align: left;
-            white-space: pre-wrap;
+        .video-container {
+            width: 100%;
+            max-width: 640px;
+            margin: 0 auto;
         }
     </style>
 </head>
 <body>
-    <video id="videoPlayer" controls>
-        <source src="http://localhost:8001/video.mov" type="video/quicktime">
-        Your browser does not support the video tag.
-    </video>
-    <div id="error-message"></div>
-    <div id="debug-info"></div>
-
-    <script>
-        const video = document.getElementById('videoPlayer');
-        const errorMessage = document.getElementById('error-message');
-        const debugInfo = document.getElementById('debug-info');
-
-        function updateDebugInfo() {
-            const states = ['HAVE_NOTHING', 'HAVE_METADATA', 'HAVE_CURRENT_DATA', 'HAVE_FUTURE_DATA', 'HAVE_ENOUGH_DATA'];
-            const networkStates = ['NETWORK_EMPTY', 'NETWORK_IDLE', 'NETWORK_LOADING', 'NETWORK_NO_SOURCE'];
-            const mediaError = video.error;
-            let errorCode = '';
-            
-            if (mediaError) {
-                switch(mediaError.code) {
-                    case 1: errorCode = 'MEDIA_ERR_ABORTED'; break;
-                    case 2: errorCode = 'MEDIA_ERR_NETWORK'; break;
-                    case 3: errorCode = 'MEDIA_ERR_DECODE'; break;
-                    case 4: errorCode = 'MEDIA_ERR_SRC_NOT_SUPPORTED'; break;
-                    default: errorCode = 'UNKNOWN';
-                }
-            }
-            
-            debugInfo.textContent = `
-Debug Information:
------------------
-Current Source: ${video.currentSrc || 'None'}
-Ready State: ${states[video.readyState]} (${video.readyState})
-Network State: ${networkStates[video.networkState]} (${video.networkState})
-Video Width: ${video.videoWidth}
-Video Height: ${video.videoHeight}
-Error Code: ${errorCode}
-Error Message: ${mediaError ? mediaError.message : 'None'}
-`;
-        }
-
-        video.addEventListener('loadstart', () => {
-            console.log('Load started');
-            updateDebugInfo();
-        });
-
-        video.addEventListener('loadedmetadata', () => {
-            console.log('Metadata loaded');
-            updateDebugInfo();
-        });
-
-        video.addEventListener('error', (e) => {
-            console.error('Video Error:', video.error);
-            errorMessage.textContent = `Error loading video: ${video.error ? video.error.message : 'Unknown error'}`;
-            updateDebugInfo();
-        });
-
-        // Initial debug info
-        updateDebugInfo();
-
-        // Update debug info periodically
-        setInterval(updateDebugInfo, 1000);
-    </script>
+    <div class="video-container">
+        <iframe 
+            width="640" 
+            height="360" 
+            src="https://www.youtube.com/embed/J9yQY0IvKgI" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+    </div>
 </body>
 </html>
