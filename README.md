@@ -2,10 +2,7 @@
 
 A modern coupon management system built with React and Node.js. Check out the demo:
 
-<video width="640" height="360" controls>
-  <source src="https://github.com/Gurleen-Makkar/MonkCommerce/raw/main/video.mov" type="video/quicktime">
-  Your browser does not support the video tag.
-</video>
+[![Demo Video](https://img.youtube.com/vi/J9yQY0IvKgI/0.jpg)](https://www.youtube.com/watch?v=J9yQY0IvKgI "Watch Demo Video")
 
 ## What's this about?
 
