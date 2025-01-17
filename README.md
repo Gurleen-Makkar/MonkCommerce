@@ -1,5 +1,7 @@
 # Monk Commerce - Coupon Management System
 
+[Watch the Demo Video](video.mov)
+
 A comprehensive coupon management system that supports various types of discounts and promotional offers.
 
 ## Implemented Features
