@@ -35,7 +35,7 @@ function Navbar() {
     <AppBar 
       position="static" 
       sx={{ 
-        backgroundColor: customTheme.colors.secondary.main,
+        backgroundColor: 'green',
         boxShadow: 'none',
         borderBottom: `1px solid ${customTheme.colors.divider}`
       }}
