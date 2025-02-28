@@ -35,7 +35,7 @@ function Navbar() {
     <AppBar 
       position="static" 
       sx={{ 
-        backgroundColor: 'green',
+        backgroundColor: 'yellow',
         boxShadow: 'none',
         borderBottom: `1px solid ${customTheme.colors.divider}`
       }}
@@ -54,8 +54,8 @@ function Navbar() {
           >
             <MenuIcon />
           </IconButton>
-        )}
-        
+        )} 
+
         <Typography
           variant="h6"
           component={RouterLink}
