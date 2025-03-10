@@ -54,7 +54,7 @@ function Navbar() {
           >
             <MenuIcon />
           </IconButton>
-        )} 
+        )}
 
         <Typography
           variant="h6"
